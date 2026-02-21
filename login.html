@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DR Login Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylee.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">DR Login Page</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/login" class="active">Login</a>
+            <a href="/register">Register</a>
+        </div>
+    </nav>
+
+    <div class="login-wrapper">
+        <div class="login-card">
+            <!-- Use your uploaded login1.png image as avatar -->
+            <div class="avatar-container">
+                <img src="{{ url_for('static', filename='login1.png') }}" alt="User Avatar" class="avatar">
+            </div>
+
+            <form action="/login" method="post">
+                <div class="input-group">
+                    <input type="text" name="username" placeholder="Enter username" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" placeholder="Enter password" required>
+                </div>
+                
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+
+            <!-- Display login error -->
+            {% if error %}
+            <p class="error-text">{{ error }}</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 <b>Diabetic Retinopathy Classification Project</b></p>
+        </div>
+    </footer>
+</body>
+</html>

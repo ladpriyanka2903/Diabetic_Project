@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DR Register Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylee.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">DR Register</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/register" class="active">Register</a>
+        </div>
+    </nav>
+
+    <div class="login-wrapper">
+        <div class="login-card">
+            <!-- Use your uploaded register1.png image as avatar -->
+            <div class="avatar-container">
+                <img src="{{ url_for('static', filename='regester1.png') }}" alt="Register Icon" class="avatar" style="background-color: #cddc39;">
+            </div>
+
+            <form action="/register" method="post">
+                <div class="input-group">
+                    <input type="text" name="name" placeholder="Enter Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Enter Email ID" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" placeholder="Enter Password" required>
+                </div>
+                
+                <button type="submit" class="login-btn">Register</button>
+            </form>
+
+            <!-- Optional message -->
+            {% if error %}
+            <p class="error-text">{{ error }}</p>
+            {% endif %}
+
+            <div style="margin-top: 15px; font-size: 14px; color: #666;">
+                Already have an account? <a href="/login" style="color: blue; text-decoration: none;">Login</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 <b>Diabetic Retinopathy Classification Project</b></p>
+        </div>
+    </footer>
+</body>
+</html>

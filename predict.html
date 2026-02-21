@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetes Prediction</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylee.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div><a href="/">Home</a></div>
+        <div>
+            <a href="/about">About</a>
+            <a href="/predict">Predict</a>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <h2>Diabetes Prediction</h2>
+
+        <!-- Upload Form -->
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <label for="file">Upload Image:</label>
+            <input type="file" id="file" name="file" accept="image/*" onchange="previewImage(event)" required>
+            <img id="imagePreview" class="preview" src="#" alt="Image Preview" style="display:none;">
+            <br>
+            <button type="submit" class="btn">Predict</button>
+        </form>
+
+        <!-- Prediction Result -->
+        {% if prediction %}
+            <div class="result">
+                <h3>Prediction: {{ prediction }}</h3>
+                <h3>Confidence: {{ confidence }}%</h3>
+                <p>Uploaded Image:</p>
+                <img class="preview" src="{{ url_for('static', filename=filename) }}" alt="Uploaded Image">
+            </div>
+        {% endif %}
+
+        <!-- Related Images -->
+        {% if related_images %}
+            <h3>Related Images:</h3>
+            <div class="related-images">
+                {% for img in related_images %}
+                    <img src="{{ url_for('static', filename='Dataset/' + img) }}" alt="Related Image">
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 <b>Diabetic Retinopathy Classification Project</b></p>
+        </div>
+    </footer>
+
+    <!-- Image Preview Script -->
+    <script>
+        function previewImage(event) {
+            var preview = document.getElementById('imagePreview');
+            preview.style.display = 'block';
+            var reader = new FileReader();
+            reader.onload = function(){
+                preview.src = reader.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</body>
+</html>

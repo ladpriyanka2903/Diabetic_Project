@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetic Retinopathy Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylee.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Diabetic Retinopathy Classification</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+            <a href="/predict">Prediction</a>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="image-section">
+            <img src="{{ url_for('static', filename='diabeteseye.jpg') }}" alt="Normal Eye vs Diabetic Eye" class="hero-image">
+        </div>
+
+        <div class="about-container">
+            <div class="about-header">
+                <h2>ABOUT PROJECT</h2>
+                <div class="yellow-line"></div>
+            </div>
+
+            <div class="info-container">
+                <div class="info-box">
+                    <h3>Problem:</h3>
+                    <p>
+                        Diabetic Retinopathy (DR) is a common complication of diabetes mellitus, which causes lesions on the 
+                        retina that affect vision. If it is not detected early, it can lead to blindness. Unfortunately, DR is 
+                        not a reversible process, and treatment only sustains vision. DR early detection and treatment can 
+                        significantly reduce the risk of vision loss. The manual diagnosis process of DR retina fundus images 
+                        by ophthalmologists is time, effort, and cost-consuming and prone to misdiagnosis unlike computer-aided 
+                        diagnosis.
+                    </p>
+                </div>
+                <div class="divider"></div>
+                <div class="info-box">
+                    <h3>Solution:</h3>
+                    <p>
+                        In this project, we will be building a Transfer learning model that can detect and classify types of 
+                        Diabetic Retinopathy. A web application is integrated with the model, from where the user can upload a 
+                        Diabetic Retinopathy (DR) image like Mild DR, Severe DR, etc., and see the analyzed results on User Interface.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 <b>Diabetic Retinopathy Classification Project</b> | All Rights Reserved</p>
+            <p style="font-size: 12px; margin-top: 5px; color: #aaa;">Helping prevent vision loss through AI technology.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,312 @@
+/* --- GLOBAL STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    background-color: #222;
+    color: white;
+    padding: 15px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links a, .navbar a {
+    color: #ddd;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .navbar a:hover, .nav-links a.active, .navbar a.active {
+    color: #ffdb58;
+}
+
+/* --- MAIN CONTENT / HOME PAGE --- */
+.main-content {
+    flex: 1;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 30px;
+    width: 100%;
+}
+
+.image-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.hero-image {
+    max-width: 85%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* --- ABOUT SECTION --- */
+.about-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.yellow-line {
+    width: 120px;
+    height: 3px;
+    background-color: #ffdb58;
+    margin: 12px auto;
+}
+
+.info-container {
+    display: flex;
+    gap: 60px;
+    justify-content: space-between;
+}
+
+.info-box { flex: 1; }
+
+.divider {
+    width: 1px;
+    background-color: #eee;
+    height: 200px;
+}
+
+/* --- LOGIN & REGISTER CARDS --- */
+.login-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-card {
+    background: white;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.avatar-container {
+    margin-bottom: 25px;
+}
+
+.avatar-login {
+    width: 110px;
+    height: 110px;
+    background-color: #4db6ac;
+    border-radius: 50%;
+    padding: 15px;
+    object-fit: contain;
+}
+
+.avatar-register {
+    width: 110px;
+    height: 110px;
+    background-color: #cddc39;
+    border-radius: 50%;
+    padding: 15px;
+    object-fit: contain;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #4db6ac;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #222;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 5px;
+}
+
+.login-btn:hover {
+    background-color: #444;
+}
+
+.pred-text {
+    margin-top: 15px;
+    color: #666;
+    font-size: 13px;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    width: 100%;
+    margin-top: auto;
+}
+
+footer b {
+    color: #ffdb58;
+}
+
+/* --- PREDICTION PAGE --- */
+.prediction-container, .container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.prediction-container h2, .container h2 {
+    margin-bottom: 25px;
+    color: #222;
+}
+
+.file-input {
+    margin: 20px 0;
+}
+
+.file-input input[type="file"], input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+.predict-btn, .btn {
+    padding: 12px 25px;
+    background-color: #222;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.predict-btn:hover, .btn:hover {
+    background-color: #555;
+}
+
+.result-box {
+    margin-top: 25px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    color: #444;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* --- IMAGE PREVIEW --- */
+.preview {
+    max-width: 100%;
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* --- RELATED IMAGES --- */
+.container div img {
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.container div img:hover {
+    transform: scale(1.05);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .info-container { flex-direction: column; gap: 30px; }
+    .divider { display: none; }
+    .navbar { flex-direction: column; padding: 15px; }
+    .nav-links { margin-top: 15px; }
+    .hero-image { max-width: 100%; }
+    .prediction-container, .container { margin: 20px; padding: 20px; }
+    .navbar a { margin: 10px 0; }
+}
+
+/* --- IMAGE PREVIEW (Uploaded Image) --- */
+#imagePreview {
+    width: 150px;        /* fixed width */
+    height: 150px;       /* fixed height */
+    border-radius: 50%;  /* circular image */
+    object-fit: cover;   /* crop/fit image */
+    margin: 20px auto;   /* center horizontally with top/bottom margin */
+    display: block;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border: 3px solid #ffdb58;
+}
+
+
+ .related-images {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 15px;              
+    margin-top: 25px;
+    flex-wrap: wrap;       
+}
+
+.related-images img {
+    width: 120px;            
+    height: 120px;            
+    object-fit: cover;       
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.related-images img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+} 
